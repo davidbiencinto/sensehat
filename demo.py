@@ -58,7 +58,7 @@ for x in range(5):
 
 sense.set_pixels(clear)
 
-
+print()
 print("DEMO SENSORES....")
 humidity = sense.get_humidity()
 print("Humedad: %s %%rH" % humidity)
@@ -128,3 +128,44 @@ print("The joystick was {} {}".format(event.action, event.direction))
 time.sleep(0.1)
 event = sense.stick.wait_for_event()
 print("The joystick was {} {}".format(event.action, event.direction))
+
+print()
+print("DIRECCIONES")
+x = 3
+y = 3
+sense = SenseHat()
+
+def clamp(value, min_value=0, max_value=7):
+    return min(max_value, max(min_value, value))
+
+def pushed_up(event):
+    global y
+    if event.action != ACTION_RELEASED:
+        y = clamp(y - 1)
+
+def pushed_down(event):
+    global y
+    if event.action != ACTION_RELEASED:
+        y = clamp(y + 1)
+
+def pushed_left(event):
+    global x
+    if event.action != ACTION_RELEASED:
+        x = clamp(x - 1)
+
+def pushed_right(event):
+    global x
+    if event.action != ACTION_RELEASED:
+        x = clamp(x + 1)
+
+def refresh():
+    sense.clear()
+    sense.set_pixel(x, y, 255, 255, 255)
+
+sense.stick.direction_up = pushed_up
+sense.stick.direction_down = pushed_down
+sense.stick.direction_left = pushed_left
+sense.stick.direction_right = pushed_right
+sense.stick.direction_any = refresh
+refresh()
+time.pause()
