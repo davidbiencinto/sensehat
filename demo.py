@@ -125,6 +125,6 @@ print(sense.accelerometer_raw)
 
 event = sense.stick.wait_for_event()
 print("The joystick was {} {}".format(event.action, event.direction))
-sleep(0.1)
+time.sleep(0.1)
 event = sense.stick.wait_for_event()
 print("The joystick was {} {}".format(event.action, event.direction))
