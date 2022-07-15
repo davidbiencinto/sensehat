@@ -49,5 +49,5 @@ sense.set_pixels(clear)
 
 for x in range(5):
     sense.set_pixels(question_mark)
-    time.sleep(1)
+    time.sleep(1.1)
     sense.set_pixels(hearth)
