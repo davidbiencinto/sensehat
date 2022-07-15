@@ -2,8 +2,8 @@ from sense_hat import SenseHat
 
 sense = SenseHat()
 
-X = [255, 0, 0]  # Red
-O = [255, 255, 255]  # White
+X = [255, 255, 0]  # Red
+O = [100, 150, 100]  # White
 
 question_mark = [
 O, O, O, X, X, O, O, O,
