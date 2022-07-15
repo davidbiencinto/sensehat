@@ -20,7 +20,7 @@ O, O, O, O, O, O, O, O,
 O, O, O, X, O, O, O, O
 ]
 
-X = [255, 0, 255]  # Red
+X = [255, 0, 0]  # Red
 O = [20, 20, 20]  # White
 
 question_mark = [
@@ -52,9 +52,9 @@ sense.set_pixels(clear)
 
 for x in range(5):
     sense.set_pixels(question_mark)
-    time.sleep(1.1)
+    time.sleep(0.5)
     sense.set_pixels(hearth)
-    time.sleep(1.1)
+    time.sleep(0.5)
 
 sense.set_pixels(clear)
 
