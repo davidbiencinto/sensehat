@@ -1,6 +1,6 @@
 from sense_hat import SenseHat
 import time
-
+from signal import pause
 
 sense = SenseHat()
 
@@ -168,4 +168,4 @@ sense.stick.direction_left = pushed_left
 sense.stick.direction_right = pushed_right
 sense.stick.direction_any = refresh
 refresh()
-time.pause()
+pause()
