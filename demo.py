@@ -1,4 +1,6 @@
 from sense_hat import SenseHat
+from sense_hat import ACTION_PRESSED, ACTION_HELD, ACTION_RELEASED
+
 import time
 from signal import pause
 
@@ -123,11 +125,11 @@ print("x: {x}, y: {y}, z: {z}".format(**raw))
 print(sense.accel_raw)
 print(sense.accelerometer_raw)
 
-event = sense.stick.wait_for_event()
-print("The joystick was {} {}".format(event.action, event.direction))
-time.sleep(0.1)
-event = sense.stick.wait_for_event()
-print("The joystick was {} {}".format(event.action, event.direction))
+# event = sense.stick.wait_for_event()
+# print("The joystick was {} {}".format(event.action, event.direction))
+# time.sleep(0.1)
+# event = sense.stick.wait_for_event()
+# print("The joystick was {} {}".format(event.action, event.direction))
 
 print()
 print("DIRECCIONES")
