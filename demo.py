@@ -30,7 +30,7 @@ O, O, O, O, O, O, O, O,
 O, O, O, X, O, O, O, O
 ]
 
-for x in range(5)
+for x in range(5):
     sense.set_pixels(question_mark)
     time.sleep(3)
     sense.set_pixels(hearth)
